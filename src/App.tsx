@@ -1,7 +1,7 @@
 import CocktailList from "./components/CocktailList.tsx";
 import styled from "styled-components";
 import {useEffect, useState} from "react";
-import {Cocktail} from "./interfaces/Cocktails.ts";
+import type {Cocktail} from "./interfaces/Cocktails.ts";
 
 const ParentDiv=styled.div`
     width: 80vw;

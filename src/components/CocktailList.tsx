@@ -1,11 +1,13 @@
 import styled from "styled-components";
-import {Cocktail} from "../interfaces/Cocktails.ts";
+import type {Cocktail} from "../interfaces/Cocktails.ts";
+
 const AllCocktailsDiv=styled.div`
     display: flex;
     flex-flow: row wrap;    
     justify-content: space-evenly;
     background-color: bisque;
 `;
+
 const SingleCocktailDiv=styled.div<{alcoholic: string}>`
     display: flex;
     flex-direction: column;   
@@ -13,12 +15,13 @@ const SingleCocktailDiv=styled.div<{alcoholic: string}>`
     max-width: 30%;
     padding: 2%;
     margin: 1%;
-    background-color: ${(props)=>(props.alcoholic === "Alcoholic" ? 'darkorange' : 'black')};
-    color: ${(props) => (props.alcoholic !== "Alcoholic" ? 'white' : 'black')};
+    background-color: ${(props: {alcoholic: string})=>(props.alcoholic === "Alcoholic" ? 'darkorange' : 'black')};
+    color: ${(props: {alcoholic: string}) => (props.alcoholic !== "Alcoholic" ? 'white' : 'black')};
     border: 3px darkred solid;
     font: italic small-caps bold calc(2px + 1vw) Papyrus, fantasy;
     text-align: center;
 `;
+
 export default function CocktailList(props : { data:Cocktail[] } ){
     return (
         <AllCocktailsDiv >
